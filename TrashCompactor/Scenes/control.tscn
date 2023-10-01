@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvm125erce0rp"]
+
+[ext_resource type="Texture2D" uid="uid://cvdnsjpvfer1q" path="res://Textures/button.png" id="1_56nhq"]
+[ext_resource type="Script" path="res://Scripts/direction.gd" id="2_yqqse"]
+[ext_resource type="AudioStream" uid="uid://csgdooa7081k" path="res://Audio/compress.ogg" id="3_g24xc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Right" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_right = 134.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("1_56nhq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_yqqse")
+
+[node name="Left" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_right = -6.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("1_56nhq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_yqqse")
+
+[node name="Down" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 70.0
+offset_right = 64.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("1_56nhq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_yqqse")
+
+[node name="Up" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_right = 64.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_56nhq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_yqqse")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g24xc")

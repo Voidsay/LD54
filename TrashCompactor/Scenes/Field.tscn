@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddm0ksjap6im1"]
+
+[ext_resource type="Texture2D" uid="uid://dxivyv1txcnax" path="res://Textures/icon.svg" id="1_f6hdu"]
+[ext_resource type="Texture2D" uid="uid://cutw1827xesh5" path="res://Textures/Smoke.png" id="2_uumj0"]
+
+[sub_resource type="Gradient" id="Gradient_ynnp7"]
+offsets = PackedFloat32Array(0.472093, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3lehi"]
+gradient = SubResource("Gradient_ynnp7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uuxqs"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 350.0
+scale_min = 4.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_3lehi")
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f6hdu")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(65, 65)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_uuxqs")
+texture = ExtResource("2_uumj0")
+lifetime = 0.2
+one_shot = true
+randomness = 0.1
+draw_order = 2
